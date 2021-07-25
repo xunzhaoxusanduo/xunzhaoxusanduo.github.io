@@ -1,16 +1,31 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>我的全新 Hugo 网站</title>
+        <title>做有意义的事情</title>
         <link>https://xunzhaoxusanduo.github.io/</link>
-        <description>我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language>
-            <atom:link href="https://xunzhaoxusanduo.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title></title>
-    <link>https://xunzhaoxusanduo.github.io/posts/first_post/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://xunzhaoxusanduo.github.io/posts/first_post/</guid>
-    <description><![CDATA[Hello Hugo  aaa bbb ccc  ]]></description>
-</item></channel>
+        <description>Recent content on 做有意义的事情</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 25 Jul 2021 16:45:03 +0800</lastBuildDate><atom:link href="https://xunzhaoxusanduo.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>为什么需要寄存器</title>
+        <link>https://xunzhaoxusanduo.github.io/p/why-register/</link>
+        <pubDate>Sun, 25 Jul 2021 16:45:03 +0800</pubDate>
+        
+        <guid>https://xunzhaoxusanduo.github.io/p/why-register/</guid>
+        <description>&lt;img src="https://xunzhaoxusanduo.github.io/register.jpg" alt="Featured image of post 为什么需要寄存器" /&gt;&lt;p&gt;学习计算机组成原理的时候，一直很疑惑CPU为什么需要寄存器，通常国内的书本直接告诉你结论，并没有从CPU的角度去解释为什么需要寄存器，这段时间在读机械工业出版社的《计算机组成原理》，终于明白了。&lt;/p&gt;
+&lt;p&gt;假如设计一条形如ADD P = Q + R的计算机汇编指令，这里P、Q和R都是存储器地址，不使用寄存器的情况下，假设操作码为16位（ADD部分），地址空间为32位，则这条指令的长度为16 + 32 + 32 + 32 = 112位，如下如所示，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xunzhaoxusanduo.github.io/image-20210725172436711.jpg&#34; alt=&#34;image-20210725172436711&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;这种结构会带来几个问题，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;指令的长度过长；&lt;/li&gt;
+&lt;li&gt;寻址长度有限，目前是只能寻址32位空间，如果后期需要扩展寻址空间，则需要设计新的指令集。&lt;/li&gt;
+&lt;li&gt;内存访问速度比较慢，从CPU发出32位地址送到指定的存储芯片上，还要进行一定的逻辑处理（称为地址译码），存储单元的访问时间也比片上寄存器的访问时间长得多，会严重制约CPU性能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;典型的真实计算机的指令长度为16位或32位，如果使用寄存器，32位指令长度，假设操作码和控制位是17位，有3个5位操作数地址字段，则可以寻址32个寄存器，如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xunzhaoxusanduo.github.io/image-20210725165523454.jpg&#34; alt=&#34;image-20210725165523454&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;实际计算机用寄存器实现片上存贮，寄存器的功能与存储单元一样，唯一的区别在于访问的便捷性和响应时间，仅需要很少的指令位就可以指定一个片上寄存器，寄存器的大小（它的位宽）通常等于计算机完成的数据处理操作的最大宽度。例如，16位计算机的寄存器位16位。ARM有16个通用寄存器r0~r15。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
